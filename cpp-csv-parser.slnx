@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="cpp-csv-parser/cpp-csv-parser.vcxproj" Id="ff86254c-5bae-44cd-9728-2646094b6f8c" />
+</Solution>
