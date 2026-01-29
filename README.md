@@ -10,20 +10,24 @@ A lightweight, zero-dependency CSV parser implementation compatible with the C++
 - Memory Efficient: Uses standard vectors for dynamic field storage.
 
 ## Integration
+
 Simply include the cpp_csv_parser.h and cpp_csv_parser.cpp files in your project.
 
 ## Project Structure
-- src/ main.cpp: Entry point 
-- cpp_csv_parser.cpp: Implementation logic 
-- cpp_csv_parser.h: Class definitions 
+
+- src/ main.cpp: Entry point
+- cpp_csv_parser.cpp: Implementation logic
+- cpp_csv_parser.h: Class definitions
 - test.csv: Sample data for testing
 
 ## Roadmap
-- RFC 4180 Compliance: Implement logic to handle commas inside quotes.
+
+- [x] RFC 4180 Compliance: Implement logic to handle commas inside quotes.
 
 - Custom Delimiters: Support for semicolons or tabs.
 
 - Error Handling: Robust checks for malformed lines.
 
 ## License
+
 This project is open source and available under the MIT License.

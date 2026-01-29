@@ -5,15 +5,53 @@
 #include "cpp_csv_parser.h"
 
 void CsvRow::parse_line(std::string line) {
-    std::string token;
-    while (line.find(",") != std::string::npos) {
-        token = line.substr(0, line.find(","));
-        tokens.push_back(token);
-        line.erase(0, line.find(",") + 1);
+    std::string token = "";
+    bool inQuotes = false;
+    for (int i = 0; i < line.size(); i++) {
+        switch (inQuotes) {
+        case false:
+            if (line[i] == '\"') { //in quotes
+                inQuotes = true;
+                break;
+            }
+            else if(line[i] == ','){ //end of token
+                tokens.push_back(token);
+                token = "";
+            }
+            else {  //add to token
+                token += line[i];
+            }
+            break;
+        case true:
+            if (line[i] == '\"') { //quotes end -> end of token
+                if (i + 1 < line.size() && line[i + 1] == '\"') {
+                    token += '\"';
+                    i++;           
+                }
+                else {
+                    inQuotes = false;
+                }
+            }
+            else{   //add to token
+                token += line[i];
+            }
+            break;
+        }
     }
-    token = line.substr(0, line.find(","));
+    //add last saved token
     tokens.push_back(token);
 }
+
+//void CsvRow::parse_line(std::string line) {
+//    std::string token;
+//    while (line.find(",") != std::string::npos) {
+//        token = line.substr(0, line.find(","));
+//        tokens.push_back(token);
+//        line.erase(0, line.find(",") + 1);
+//    }
+//    token = line.substr(0, line.find(","));
+//    tokens.push_back(token);
+//}
 
 void CsvRow::toString() {
     for (size_t i = 0; i < tokens.size(); i++) {
