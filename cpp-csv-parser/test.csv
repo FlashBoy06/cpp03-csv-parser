@@ -1,4 +1,4 @@
-FirstName,LastName,Email,PhoneNumber
-"John, Frank",Doe,johnfrank.doe@example.com,"555-0199"
-Jane,Smith,jane.smith@testmail.co,555-0120
-Bob,Johnson,bjohnson@corp.net,555-0155
+FirstName	LastName	Email	PhoneNumber
+"John, Frank"	Doe	johnfrank.doe@example.com	"555-0199"
+Jane	Smith	jane.smith@testmail.co	555-0120
+Bob	Johnson	bjohnson@corp.net	555-0155

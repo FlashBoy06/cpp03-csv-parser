@@ -5,6 +5,8 @@ A lightweight, zero-dependency CSV parser implementation compatible with the C++
 ## Features
 
 - C++03 Compatible: Works with older compilers and legacy infrastructure.
+- RFC 4180 Compliant: Correctly handles quoted fields and escape characters.
+- Custom Delimiters: Supports custom delimiters like colons, semicolons or tabs.
 - Zero Dependencies: Uses only the Standard Template Library (vector, string, fstream).
 - Modular Design: Clean separation between interface (.h) and implementation (.cpp).
 - Memory Efficient: Uses standard vectors for dynamic field storage.
@@ -24,7 +26,7 @@ Simply include the cpp_csv_parser.h and cpp_csv_parser.cpp files in your project
 
 - [x] RFC 4180 Compliance: Implement logic to handle commas inside quotes.
 
-- Custom Delimiters: Support for semicolons or tabs.
+- [x] Custom Delimiters: Support for semicolons or tabs.
 
 - Error Handling: Robust checks for malformed lines.
 

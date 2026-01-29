@@ -11,7 +11,7 @@ int main()
     std::string line;
 
     while (std::getline(file, line)) {
-        CsvRow row;
+        CsvRow row('\t');
         row.parse_line(line);
         row.toString();
     }

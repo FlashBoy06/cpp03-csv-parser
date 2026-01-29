@@ -9,8 +9,10 @@
 class CsvRow {
 private:
     std::vector<std::string> tokens;
-
+    char delimiter;
 public:
+    CsvRow(char delimiter);
+
     void parse_line(std::string line);
     void toString();
 };

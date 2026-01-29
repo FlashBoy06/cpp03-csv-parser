@@ -4,6 +4,11 @@
 #include <iostream>
 #include "cpp_csv_parser.h"
 
+CsvRow::CsvRow(char delimiter)
+{
+    this->delimiter = delimiter;
+}
+
 void CsvRow::parse_line(std::string line) {
     std::string token = "";
     bool inQuotes = false;
@@ -14,7 +19,7 @@ void CsvRow::parse_line(std::string line) {
                 inQuotes = true;
                 break;
             }
-            else if(line[i] == ','){ //end of token
+            else if(line[i] == delimiter){ //end of token
                 tokens.push_back(token);
                 token = "";
             }
@@ -41,17 +46,6 @@ void CsvRow::parse_line(std::string line) {
     //add last saved token
     tokens.push_back(token);
 }
-
-//void CsvRow::parse_line(std::string line) {
-//    std::string token;
-//    while (line.find(",") != std::string::npos) {
-//        token = line.substr(0, line.find(","));
-//        tokens.push_back(token);
-//        line.erase(0, line.find(",") + 1);
-//    }
-//    token = line.substr(0, line.find(","));
-//    tokens.push_back(token);
-//}
 
 void CsvRow::toString() {
     for (size_t i = 0; i < tokens.size(); i++) {
